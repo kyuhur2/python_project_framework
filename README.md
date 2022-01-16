@@ -100,28 +100,22 @@ The following tools were considered when building this framework. Further consid
    Check pre-commit version by:
    `pre-commit --version`
 
-   Add a file in the root directory of the git repository titled `.pre-commit-config.yaml` and include the following:
+   Add a file in the root directory of the git repository titled `.pre-commit-config.yaml` and include the repo link, rev, hook, and id. An example can be found in the root folder of this repository. Afterwards, install the hooks with `pre-commit install` which adds the hooks to `.git/hooks/`. A more comprehensive list of hooks is available [here](https://pre-commit.com/hooks.html).
 
-```
-   repos:
-    - repo: https://github.com/pre-commit/pre-commit-hooks
-        rev: v2.3.0
-        hooks:
-        - id: check-yaml
-        - id: end-of-file-fixer
-        - id: trailing-whitespace
-    - repo: https://github.com/psf/black
-        rev: ""  # specify rev, e.g. 21.12b0
-        hooks:
-        - id: black
-    - repo: https://github.com/pycqa/flake8
-        rev: ""  # specify rev, e.g. 3.8.4
-        hooks:
-        - id: flake8
-            additional_dependencies: [flake8-docstrings]
-```
+# Saving Python Version and Package Versions
 
-Then install the hooks with `pre-commit install` which adds the hooks to `.git/hooks/`. A more comprehensive list of hooks is available [here](https://pre-commit.com/hooks.html).
+To save the conda environment specifications, run one of the following commands:
+
+`pip freeze > requirements.txt`
+`conda env export --name <environment_name> --file environment.yaml`
+
+If there is an issue with the `conda` command exporting build information, add `--no-builds` at the end as suggested [here](https://stackoverflow.com/questions/55554431/conda-fails-to-create-environment-from-yml). You can also choose to curate your own `environment.yaml` file. For pip, make sure to install libraries with `pip` and export packages with `pip list --format=freeze > requirements.txt` if you are encountering a similar issue.
+
+Afterwards, you can either create a new environment with the packages simultaneously:
+
+`conda env create -f environment.yaml`
+
+Or create the environment separately, and install packages with `pip install -r requirements.txt` while Anaconda is still activated.
 
 # Project Layout
 
