@@ -9,6 +9,7 @@ The IDE of choice was [Visual Studio Code](https://en.wikipedia.org/wiki/Visual_
 The following tools were considered when building this framework. Further considerations may be made depending on the balance of simplicity (ease of implementation) and benefit (usefulness of the tool/framework).
 
 1. [Git](https://git-scm.com/)
+
    Git is one of the most basic and important tools to adopt for any project. This is crucial for tracking changes, collaborative efforts between team members, and provides version control functionalities. Git can be conceptualized as such:
 
    ![Git Flowchart](./images/git_concept1.jpg)
@@ -143,4 +144,4 @@ There's a known conflict issue between `conda` and `pre-commit` originating from
 
 - Activate the environment in the terminal, open vscode from the activated terminal using the command `code .` **(tested)**
 - Create [exec-wrappers](https://github.com/gqmelo/exec-wrappers) and [conda-wrappers](https://github.com/conda-forge/conda-wrappers-feedstock) that mimic a conda activation before running the executable **(not tested)**
-- Reinstall conda with python versions `3.9` or `3.10` **(not tested)**
+- Reinstall conda with python versions `3.9` or `3.10` as this issue is allegedly fixed in later python versions **(not tested)**
