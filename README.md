@@ -17,7 +17,7 @@ The following tools were considered when building this framework. Further consid
    Anaconda is a virtual environment and package manager which allows for reproducible environments. Utilizing virtual environments and managing packages is integral when sharing code or working on different machines. Additionally, it allows users to use different versions of python or packages depending on the project.
 
 3. [Black](https://black.readthedocs.io/en/stable/)  
-   Black is a code formatting tool that automatically changes your code to become PEP8 compliant.
+   Black is a code formatting tool that forcefully changes your code according to the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/).
 
 4. [Flake8](https://flake8.pycqa.org/en/latest/)  
    Flake8 is a code checking tool that checks whether your code has any errors.
@@ -40,24 +40,27 @@ The following tools were considered when building this framework. Further consid
 2. Setting up Anaconda  
    If this is your first time installing or setting up Anaconda, you need to start by initializng Anaconda in the terminal with `conda init`. Afterwards, run `conda env list` to see the list of environments. There should only be one environment named `base` and the asterisk mark shows you which environment you are currently in. If this command was unsuccessful due to Anaconda not initializing properly, read [this](https://stackoverflow.com/questions/44597662/conda-command-is-not-recognized-on-windows-10).
 
-   Afterwards, run the following commands to create and activate your Anaconda  
-   `conda create --name <environment_name> python=<python_version> -y` <span style="color:DarkGreen">creates an environment</span>  
-   `conda activate <environment_name>` \\ activates environment  
-   `conda deactivate` \\ deactivates environment
+   Afterwards, run the following commands to create and activate your Anaconda
 
-   Some general purpose commands include:  
-   `conda env list` \\ list of environments  
-   `conda list` \\ lists the packages installed in the current environment (base environment if no environment is activated)  
-   `conda env remove --name <environment_name>` \\ deletes an environment
+   - Creating environment: `conda create --name <environment_name> python=<python_version> -y`
+   - Activating environment: `conda activate <environment_name>`
+   - Deactivating environment: `conda deactivate`
 
-   Packages can be installed by:  
-   `conda install <package_name>` \\ installs packages available on [Anaconda.org](https://anaconda.org/)  
-   `conda install --channel=conda-forge <package_name>` \\ installs packages available on [conda-forge](https://conda-forge.org/)  
-   `conda install --channel=r <package_name>` \\ installs packages available the r channel on Anaconda (e.g. r-essentials)  
-   `mamba install <package_name>` \\ installs packages with mamba (tends to be faster, written in C)  
-   `pip install <package_name>` \\ installs packages with pip
+   Some general purpose commands include:
 
-   Other r packages not available on Anaconda can be installed using [this method](https://stackoverflow.com/questions/34705917/how-to-install-r-packages-that-are-not-available-in-r-essentials).
+   - List of environments: `conda env list`
+   - List of packages in environment: `conda list`
+   - Deletes an environment: `conda env remove --name <environment_name>`
+
+   Packages can be installed by:
+
+   - Installs packages from [Anaconda.org](https://anaconda.org/): `conda install <package_name>`
+   - Installs packages from [conda-forge](https://conda-forge.org/): `conda install --channel=conda-forge <package_name>`
+   - Installs packages from [r channel on Anaconda](https://anaconda.org/r/repo): `conda install --channel=r <package_name>`
+   - Installs packages using [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html#): `mamba install <package_name>`
+   - Installs packages using [pip](https://pip.pypa.io/en/stable/cli/pip_install/): `pip install <package_name>`
+
+   Other r packages not available on Anaconda can be installed the methods outlined [here](https://stackoverflow.com/questions/34705917/how-to-install-r-packages-that-are-not-available-in-r-essentials).
 
 3. Setting up Black  
    Go into **File** > **Preferences** > **Settings** and change **Python › Formatting: Provider** to **black**. If your options are different, look online for a solution.
