@@ -8,21 +8,21 @@ The IDE of choice was [Visual Studio Code](https://en.wikipedia.org/wiki/Visual_
 
 The following tools were considered when building this framework. Further considerations may be made depending on the balance of simplicity (ease of implementation) and benefit (usefulness of the tool/framework).
 
-1. [Git](https://git-scm.com/)
-   Git is one of the most basic and important tools to adopt for any project. This is crucial for tracking changes, collaborative efforts between team members, and provides version control functionalities. Git can be conceptualized as such:
+1. [Git](https://git-scm.com/)  
+   Git is one of the most basic and important tools to adopt for any project. This is crucial for tracking changes, collaborative efforts between team members, and provides version control functionalities. Git can be conceptualized as such:  
    ![Git Flowchart](./images/git_concept1.jpg)
    ![Git Collaboration Conceptualization](./images/git_concept2.jpg)
 
-2. [Anaconda](https://www.anaconda.com/)
+2. [Anaconda](https://www.anaconda.com/)  
    Anaconda is a virtual environment and package manager which allows for reproducible environments. Utilizing virtual environments and managing packages is integral when sharing code or working on different machines. Additionally, it allows users to use different versions of python or packages depending on the project.
 
-3. [Black](https://black.readthedocs.io/en/stable/)
+3. [Black](https://black.readthedocs.io/en/stable/)  
    Black is a code formatting tool that automatically changes your code to become PEP8 compliant.
 
-4. [Flake8](https://flake8.pycqa.org/en/latest/)
+4. [Flake8](https://flake8.pycqa.org/en/latest/)  
    Flake8 is a code checking tool that checks whether your code has any errors.
 
-5. [Pre-commit](https://pre-commit.com/)
+5. [Pre-commit](https://pre-commit.com/)  
    Pre-commit checks and identifies issues before commit code for code reviews. It scans all files that are staged for a commit and forces the user to fix issues (if any) before restaging the commit.
 
 # How to Download
@@ -37,39 +37,39 @@ The following tools were considered when building this framework. Further consid
 
 1. [Setting up Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
-2. Setting up Anaconda
+2. Setting up Anaconda  
    If this is your first time installing or setting up Anaconda, you need to start by initializng Anaconda in the terminal with `conda init`. Afterwards, run `conda env list` to see the list of environments. There should only be one environment named `base` and the asterisk mark shows you which environment you are currently in. If this command was unsuccessful due to Anaconda not initializing properly, read [this](https://stackoverflow.com/questions/44597662/conda-command-is-not-recognized-on-windows-10).
 
-   Afterwards, run the following commands to create and activate your Anaconda
-   `conda create --name <environment_name> python=<python_version> -y` \\ creates an environment
-   `conda activate <environment_name>` \\ activates environment
+   Afterwards, run the following commands to create and activate your Anaconda  
+   `conda create --name <environment_name> python=<python_version> -y` <span style="color:DarkGreen">creates an environment</span>  
+   `conda activate <environment_name>` \\ activates environment  
    `conda deactivate` \\ deactivates environment
 
-   Some general purpose commands include:
-   `conda env list` \\ list of environments
-   `conda list` \\ lists the packages installed in the current environment (base environment if no environment is activated)
+   Some general purpose commands include:  
+   `conda env list` \\ list of environments  
+   `conda list` \\ lists the packages installed in the current environment (base environment if no environment is activated)  
    `conda env remove --name <environment_name>` \\ deletes an environment
 
-   Packages can be installed by:
-   `conda install <package_name>` \\ installs packages available on [Anaconda.org](https://anaconda.org/)
-   `conda install --channel=conda-forge <package_name>` \\ installs packages available on [conda-forge](https://conda-forge.org/)
-   `conda install --channel=r <package_name>` \\ installs packages available the r channel on Anaconda (e.g. r-essentials)
-   `mamba install <package_name>` \\ installs packages with mamba (tends to be faster, written in C)
+   Packages can be installed by:  
+   `conda install <package_name>` \\ installs packages available on [Anaconda.org](https://anaconda.org/)  
+   `conda install --channel=conda-forge <package_name>` \\ installs packages available on [conda-forge](https://conda-forge.org/)  
+   `conda install --channel=r <package_name>` \\ installs packages available the r channel on Anaconda (e.g. r-essentials)  
+   `mamba install <package_name>` \\ installs packages with mamba (tends to be faster, written in C)  
    `pip install <package_name>` \\ installs packages with pip
 
    Other r packages not available on Anaconda can be installed using [this method](https://stackoverflow.com/questions/34705917/how-to-install-r-packages-that-are-not-available-in-r-essentials).
 
-3. Setting up Black
+3. Setting up Black  
    Go into **File** > **Preferences** > **Settings** and change **Python › Formatting: Provider** to **black**. If your options are different, look online for a solution.
 
-4. Setting up Flake8
+4. Setting up Flake8  
    Open the **Command Palette** with `Ctrl + Shift + P` then type **Python: Run Linting**. Adds `"python.linting.<linter>Enabled": true` to your VSCode settings. Add `"python.linting.lintOnSave": true` to your VSCode settings as well to activate linter on save.
 
-5. Setting up Pre-commit
-   Check pre-commit version by:
+5. Setting up Pre-commit  
+   Check pre-commit version by:  
    `pre-commit --version`
 
-   Add a file in the root directory of the git repository titled `.pre-commit-config.yaml` and include the following
+   Add a file in the root directory of the git repository titled `.pre-commit-config.yaml` and include the following:
 
 ```
    repos:
@@ -90,21 +90,20 @@ The following tools were considered when building this framework. Further consid
             additional_dependencies: [flake8-docstrings]
 ```
 
-Then install the hooks with `pre-commit install` which adds the hooks to `.git/hooks/`
-A more comprehensive list of hooks is available [here](https://pre-commit.com/hooks.html).
+Then install the hooks with `pre-commit install` which adds the hooks to `.git/hooks/`. A more comprehensive list of hooks is available [here](https://pre-commit.com/hooks.html).
 
 # Project Layout
 
-The project tree of the most pertinent items can be described briefly in a tree like so:
+The project tree of the most pertinent items can be described briefly.
 
     python_project_framework/
-    │
-    ├── images/
-    │   ├── git_concept1.jpg
-    │   └── git_concept2.jpg
-    │
-    ├── environment.yml
-    └── README.md
+     │
+     ├── images/
+     │   ├── git_concept1.jpg
+     │   └── git_concept2.jpg
+     │
+     ├── environment.yml
+     └── README.md
 
 # Notes
 
