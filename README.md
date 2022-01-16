@@ -9,7 +9,8 @@ The IDE of choice was [Visual Studio Code](https://en.wikipedia.org/wiki/Visual_
 The following tools were considered when building this framework. Further considerations may be made depending on the balance of simplicity (ease of implementation) and benefit (usefulness of the tool/framework).
 
 1. [Git](https://git-scm.com/)  
-   Git is one of the most basic and important tools to adopt for any project. This is crucial for tracking changes, collaborative efforts between team members, and provides version control functionalities. Git can be conceptualized as such:  
+   Git is one of the most basic and important tools to adopt for any project. This is crucial for tracking changes, collaborative efforts between team members, and provides version control functionalities. Git can be conceptualized as such:
+
    ![Git Flowchart](./images/git_concept1.jpg)
    ![Git Collaboration Conceptualization](./images/git_concept2.jpg)
 
@@ -38,7 +39,7 @@ The following tools were considered when building this framework. Further consid
 1. [Setting up Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
 2. Setting up Anaconda  
-   If this is your first time installing or setting up Anaconda, you need to start by initializng Anaconda in the terminal with `conda init`. Afterwards, run `conda env list` to see the list of environments. There should only be one environment named `base` and the asterisk mark shows you which environment you are currently in. If this command was unsuccessful due to Anaconda not initializing properly, read [this](https://stackoverflow.com/questions/44597662/conda-command-is-not-recognized-on-windows-10).
+   If this is your first time installing or setting up Anaconda, you need to start by initializng Anaconda in the terminal with `conda init`. Afterwards, run `conda env list` to see the list of environments. There should only be one environment named `(base)` and the asterisk mark shows you which environment you are currently in. If this command was unsuccessful due to Anaconda not initializing properly, read [this](https://stackoverflow.com/questions/44597662/conda-command-is-not-recognized-on-windows-10).
 
    Afterwards, run the following commands to create and activate your Anaconda
 
@@ -110,7 +111,7 @@ The project tree of the most pertinent items can be described briefly.
 
 # Notes
 
-1. `conda` and `pre-commit`
+1. Conflicts between `conda` and `pre-commit`
 
 There's a known conflict issue between `conda` and `pre-commit` originating from how git hooks are generated for python versions under `3.9`. `pre-commit install` python executables are stored in generated git hooks, but a `conda` environment executes the installed python version only when the environment is activated. To circumvent this issue, there are three possible ways to solve this, as documented [here](https://github.com/conda-forge/pre-commit-feedstock/issues/9):
 
