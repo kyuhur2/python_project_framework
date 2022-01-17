@@ -114,14 +114,14 @@ The following tools were considered when building this framework. Further consid
 
 To save the conda environment specifications, run one of the following commands:
 
-`pip freeze > requirements.txt`
-`conda env export --name <environment_name> --file environment.yaml`
+- `pip freeze > requirements.txt`
+- `conda env export --name <environment_name> --file environment.yaml`
 
 If there is an issue with the `conda` command exporting build information, add `--no-builds` at the end as suggested [here](https://stackoverflow.com/questions/55554431/conda-fails-to-create-environment-from-yml). You can also choose to curate your own `environment.yaml` file. For pip, make sure to install libraries with `pip` and export packages with `pip list --format=freeze > requirements.txt` if you are encountering a similar issue.
 
 Afterwards, you can either create a new environment with the packages simultaneously:
 
-`conda env create -f environment.yaml`
+- `conda env create -f environment.yaml`
 
 Or create the environment separately, and install packages with `pip install -r requirements.txt` while Anaconda is still activated.
 
