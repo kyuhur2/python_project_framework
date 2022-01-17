@@ -36,32 +36,17 @@ The following tools were considered when building this framework. Further consid
 
    Pre-commit checks and identifies issues before commit code for code reviews. It scans all files that are staged for a commit and forces the user to fix issues (if any) before restaging the commit.
 
-# How to Download
+# Download and Set Up
 
-1. [Download Git](https://git-scm.com/downloads)
+1. **Git**
 
-2. [Download Anaconda](https://www.anaconda.com/products/individual)
+   [Download](https://git-scm.com/downloads)
 
-3. Download **Black** in terminal with one of either:
+   [Set Up](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
-   `pip install black`
-   `conda install --channel=conda-forge black` (after cond activation)
+2. **Anaconda**
 
-4. Download **Flake8** in terminal with one of either:
-
-   `pip install flake8`
-   `conda install flake8` (after conda activation); [More information](https://code.visualstudio.com/docs/python/linting)
-
-5. Download **Pre-commit** in terminal with one of either:
-
-   `pip install pre-commit`
-   `conda install --channel=conda-forge pre-commit` (after conda activation)
-
-# Set up
-
-1. [Setting up Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
-
-2. Setting up Anaconda
+   [Download Anaconda](https://www.anaconda.com/products/individual)
 
    If this is your first time installing or setting up Anaconda, you need to start by initializng Anaconda in the terminal with `conda init`. Afterwards, run `conda env list` to see the list of environments. There should only be one environment named `(base)` and the asterisk mark shows you which environment you are currently in. If this command was unsuccessful due to Anaconda not initializing properly, read [this](https://stackoverflow.com/questions/44597662/conda-command-is-not-recognized-on-windows-10).
 
@@ -87,20 +72,43 @@ The following tools were considered when building this framework. Further consid
 
    Other r packages not available on Anaconda can be installed the methods outlined [here](https://stackoverflow.com/questions/34705917/how-to-install-r-packages-that-are-not-available-in-r-essentials).
 
-3. Setting up **Black**
+3. **Black**
 
-   Go into **File** > **Preferences** > **Settings** and change **Python › Formatting: Provider** to **black**. If your options are different, look online for a solution.
+   Download in terminal with one of either:
 
-4. Setting up **Flake8**
+   - `pip install black`
+   - `conda install --channel=conda-forge black` (after cond activation)
 
-   Open the **Command Palette** with `Ctrl + Shift + P` then type **Python: Run Linting**. Adds `"python.linting.<linter>Enabled": true` to your VSCode settings. Add `"python.linting.lintOnSave": true` to your VSCode settings as well to activate linter on save.
+   Set Up:
 
-5. Setting up **Pre-commit**
+   - Go into **File** > **Preferences** > **Settings**.
+   - Change **Python › Formatting: Provider** to **black**. If your options are different, look online for a solution.
 
-   Check pre-commit version by:
-   `pre-commit --version`
+4. **Flake8**
 
-   Add a file in the root directory of the git repository titled `.pre-commit-config.yaml` and include the repo link, rev, hook, and id. An example can be found in the root folder of this repository. Afterwards, install the hooks with `pre-commit install` which adds the hooks to `.git/hooks/`. A more comprehensive list of hooks is available [here](https://pre-commit.com/hooks.html).
+   Download in terminal with one of either:
+
+   - `pip install flake8`
+   - `conda install flake8` (after conda activation); [More information](https://code.visualstudio.com/docs/python/linting)
+
+   Set Up:
+
+   - Open the **Command Palette** with `Ctrl + Shift + P` then type **Python: Run Linting**.
+   - Add `"python.linting.flake8Enabled": true` to your VSCode settings.
+   - Add `"python.linting.lintOnSave": true` to your VSCode settings as well to activate linter on save.
+
+5. **Pre-commit**
+
+   Download **Pre-commit** in terminal with one of either:
+
+   - `pip install pre-commit`
+   - `conda install --channel=conda-forge pre-commit` (after conda activation)
+
+   Set Up:
+
+   - Check pre-commit version with `pre-commit --version`
+   - Add a file in the root directory of the git repository titled `.pre-commit-config.yaml` and include the repo link, rev, hook, and id. An example can be found in the root folder of this repository.
+   - Install the hooks with `pre-commit install` which adds the hooks to `.git/hooks/`. A more comprehensive list of hooks is available [here](https://pre-commit.com/hooks.html).
 
 # Saving Python Version and Package Versions
 
