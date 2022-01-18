@@ -109,6 +109,7 @@ The following tools were considered when building this framework. Further consid
    - Check pre-commit version with `pre-commit --version`
    - Add a file in the root directory of the git repository titled `.pre-commit-config.yaml` and include the repo link, rev, hook, and id. An example can be found in the root folder of this repository.
    - Install the hooks with `pre-commit install` which adds the hooks to `.git/hooks/`. A more comprehensive list of hooks is available [here](https://pre-commit.com/hooks.html).
+   - Run `pre-commit run --all-files` before committing changes to repo with `git push` to check whether all conditions pass
 
 # Saving Python Version and Package Versions
 
